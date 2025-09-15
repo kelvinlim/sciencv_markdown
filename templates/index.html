@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceCV Markdown Formatter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ScienceCV Markdown Formatter</h1>
+            <p>Convert your Markdown text to Word-compatible formatted text</p>
+        </header>
+        
+        <div class="main-content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <label for="markdown-input">Markdown Input:</label>
+                <textarea 
+                    id="markdown-input" 
+                    placeholder="Enter your Markdown text here...
+
+Example:
+# My Document
+This is **bold** and *italic* text.
+
+## Section 1
+- Item 1
+- Item 2
+- Item 3
+
+### Code Example
+```python
+def hello_world():
+    print('Hello, World!')
+```
+
+> This is a blockquote"
+                ></textarea>
+            </div>
+            
+            <!-- Format Button -->
+            <div class="button-section">
+                <button id="format-btn" class="format-button">
+                    <span class="button-text">Format</span>
+                    <span class="button-icon">→</span>
+                </button>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>Processing...</span>
+                </div>
+            </div>
+            
+            <!-- Output Section -->
+            <div class="output-section">
+                <div class="output-header">
+                    <label for="formatted-output">Formatted Output (Word-compatible):</label>
+                    <button id="copy-btn" class="copy-button" title="Copy to clipboard">
+                        📋 Copy
+                    </button>
+                </div>
+                <div id="formatted-output" class="formatted-output">
+                    <p class="placeholder">Formatted text will appear here...</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Ready to paste into your Word document</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
