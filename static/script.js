@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
         markdownInput.value = `# Welcome to SciENcv Markdown Formatter
 
 This tool converts your **Markdown** text into *Word-compatible* formatted text. Scroll down for more
-Markdown features. [(Link to NIH SciENcv Markdown info)](https://www.ncbi.nlm.nih.gov/sciencv/wikihelp/)
+Markdown features. 
 
 ### Sample content from a personal statement with bolding and paragraphs.
 ---
