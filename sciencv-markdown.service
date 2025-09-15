@@ -1,0 +1,37 @@
+[Unit]
+Description=ScienceCV Markdown Formatter
+Documentation=https://github.com/your-org/sciencv_markdown
+After=network.target
+
+[Service]
+Type=notify
+NotifyAccess=all
+TimeoutStartSec=0
+Restart=always
+RestartSec=5
+User=%i
+Group=%i
+
+# Working directory
+WorkingDirectory=/home/%i/Projects/sciencv_markdown
+
+# Environment variables
+Environment=FLASK_ENV=production
+Environment=FLASK_DEBUG=0
+
+# Podman run command
+ExecStartPre=/usr/bin/podman build -f Containerfile -t sciencv-markdown .
+ExecStart=/usr/bin/podman run --rm --name sciencv-app -p 5000:5000 --restart=unless-stopped sciencv-markdown
+ExecStop=/usr/bin/podman stop sciencv-app
+ExecStopPost=/usr/bin/podman rm sciencv-app
+
+# Security settings
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/home/%i/Projects/sciencv_markdown
+ReadWritePaths=/tmp
+
+[Install]
+WantedBy=multi-user.target

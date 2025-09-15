@@ -61,15 +61,21 @@ A modern web application that converts Markdown text to Word-compatible formatte
 
 ```
 sciencv_markdown/
-├── app.py                 # Flask application
-├── requirements.txt       # Python dependencies
+├── app.py                    # Flask application
+├── requirements.txt          # Python dependencies
+├── Containerfile             # Podman container definition
+├── podman-compose.yml        # Podman Compose configuration
+├── podman-run.sh            # Podman management script
+├── install-podman.sh        # Podman installation script
+├── sciencv-markdown.service # Systemd service file
 ├── static/
-│   ├── style.css         # CSS styling
-│   └── script.js         # Frontend JavaScript
+│   ├── style.css            # CSS styling
+│   └── script.js            # Frontend JavaScript
 ├── templates/
-│   └── index.html        # Main HTML template
-├── README.md             # This file
-└── .gitignore           # Git ignore file
+│   └── index.html           # Main HTML template
+├── README.md                # Project documentation
+├── Process.md               # Development process documentation
+└── .gitignore              # Git ignore file
 ```
 
 ## Technical Details
@@ -88,6 +94,84 @@ python app.py
 ```
 
 The application will start in debug mode with auto-reload enabled.
+
+## Container Deployment
+
+### Using Podman (Recommended)
+
+#### Quick Start with Podman Script
+
+1. **Build and run the application:**
+   ```bash
+   ./podman-run.sh run
+   ```
+
+2. **View logs:**
+   ```bash
+   ./podman-run.sh logs
+   ```
+
+3. **Stop the application:**
+   ```bash
+   ./podman-run.sh stop
+   ```
+
+4. **Show all available commands:**
+   ```bash
+   ./podman-run.sh help
+   ```
+
+#### Using Podman Compose
+
+1. **Build and run the application:**
+   ```bash
+   podman-compose -f podman-compose.yml up --build
+   ```
+
+2. **Run in background:**
+   ```bash
+   podman-compose -f podman-compose.yml up -d --build
+   ```
+
+3. **Stop the application:**
+   ```bash
+   podman-compose -f podman-compose.yml down
+   ```
+
+#### Using Podman directly
+
+1. **Build the image:**
+   ```bash
+   podman build -f Containerfile -t sciencv-markdown .
+   ```
+
+2. **Run the container:**
+   ```bash
+   podman run -p 5000:5000 sciencv-markdown
+   ```
+
+3. **Run in background:**
+   ```bash
+   podman run -d -p 5000:5000 --name sciencv-app --restart=unless-stopped sciencv-markdown
+   ```
+
+
+### Container Features
+
+- **Production Ready**: Uses Gunicorn WSGI server for production deployment
+- **Health Checks**: Built-in health monitoring
+- **Security**: Runs as non-root user (Podman runs rootless by default)
+- **Optimized**: Multi-layer build for smaller image size
+- **Auto-restart**: Container restarts automatically unless stopped
+- **No Daemon**: Podman doesn't require a background daemon
+- **Better Security**: Enhanced container isolation and rootless operation
+- **Easy Management**: Simple script-based container management
+
+### Access the Application
+
+Once running, access the application at:
+- **Local**: `http://localhost:5000`
+- **Network**: `http://your-server-ip:5000`
 
 ## License
 
