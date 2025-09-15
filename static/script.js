@@ -239,8 +239,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!markdownInput.value.trim()) {
         markdownInput.value = `# Welcome to SciENcv Markdown Formatter
 
-This tool converts your **Markdown** text into *Word-compatible* formatted text. Scroll down for
-Markdown features.
+This tool converts your **Markdown** text into *Word-compatible* formatted text. Scroll down for more
+Markdown features. [(Link to NIH SciENcv Markdown info)](https://www.ncbi.nlm.nih.gov/sciencv/wikihelp/)
 
 ### Sample content from a personal statement with bolding and paragraphs.
 ---
@@ -251,14 +251,23 @@ Recent projects that I would like to highlight include:
 **1I01CX002088**  
 Holtzheimer(PI); Role: Site PI;  
 10/1/2020-9/30/2025  
-Assessing an electroencephalography (EEG) biomarker of response to transcranial magnetic stimulation for major depression  
+*Assessing an electroencephalography (EEG) biomarker of response to transcranial magnetic stimulation for major depression*   
+A multisite TMS treatment study for major depression that examines the use of an EEG biomarker as a predictor of treatment response.
+
+**R01MH120126**  
+Williams(PI); Role: Site PI;  
+9/10/2019-5/31/2025  
+*Mechanistic circuit markers of transcranial magnetic stimulation outcomes in pharmacoresistant depression*
+A multisite TMS treatment study for major depression that examines the use of fMRI as a predictor of treatment response.
 
 **I01CX001995**  
 Lim(PI);  
-1/1/2020-12/31/2025  
-Effects of tDCS Paired with Cognitive Training on Brain Networks associated with Alcohol Use Disorder in Veterans
+1/1/2020-12/31/2023  
+*Effects of tDCS Paired with Cognitive Training on Brain Networks associated with Alcohol Use Disorder in Veterans*  
+A randomized clinical trial of tDCS and cognitive training for the treatment of Alcohol Use Disorder.
 ---
 ## Features
+- line break - (two spaces at end of line)
 - Headers and subheaders
 - **Bold** and *italic* text
 - Lists and numbered lists
