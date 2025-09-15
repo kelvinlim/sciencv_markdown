@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScienceCV Markdown Formatter</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', _external=False) | replace('/static/', '/sciencv/static/') }}">
+
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>ScienceCV Markdown Formatter</h1>
+            <h1>SciENcv Markdown Formatter</h1>
             <p>Convert your Markdown text to Word-compatible formatted text</p>
         </header>
         
@@ -70,7 +71,6 @@ def hello_world():
             <p>Ready to paste into your Word document</p>
         </footer>
     </div>
-    
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js', _external=False) | replace('/static/', '/sciencv/static/') }}"></script>
 </body>
 </html>

@@ -4,7 +4,8 @@ import re
 from io import StringIO
 
 app = Flask(__name__)
-
+# add following to support reverse proxy static files
+app.config['APPLICATION_ROOT'] = '/sciencv'
 def convert_markdown_to_word_html(markdown_text):
     """
     Convert markdown text to HTML that's compatible with Word documents.

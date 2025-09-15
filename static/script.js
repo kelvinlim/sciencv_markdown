@@ -28,7 +28,7 @@ async function formatMarkdown() {
     showLoading(true);
     
     try {
-        const response = await fetch('/format', {
+        const response = await fetch('/sciencv/format', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
