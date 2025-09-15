@@ -237,22 +237,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add some sample content if empty
     if (!markdownInput.value.trim()) {
-        markdownInput.value = `# Welcome to ScienceCV Markdown Formatter
+        markdownInput.value = `# Welcome to SciENcv Markdown Formatter
 
-This tool converts your **Markdown** text into *Word-compatible* formatted text.
-
-## Features
-- Headers and subheaders
-- **Bold** and *italic* text
-- Lists and numbered lists
-- Code blocks and \`inline code\`
-- Tables and blockquotes
-
-### Try it out!
-Enter your own Markdown text above and click the **Format** button.
+This tool converts your **Markdown** text into *Word-compatible* formatted text. Scroll down for
+Markdown features.
 
 ### Sample content from a personal statement with bolding and paragraphs.
-
+---
 In this project, we propose to collect EMA and wearable data in three clinical pain populations. Following EMA, at baseline, subjects will be randomized to one of two groups.  Group 1 will be told what their causal factors for PI are and how they can be addressed.  Group 2 will receive general information about biopsychosocial factors that can affect PI.  Pain assessments will be collected at baseline and 6 months after. 
 
 Recent projects that I would like to highlight include:
@@ -266,6 +257,17 @@ Assessing an electroencephalography (EEG) biomarker of response to transcranial 
 Lim(PI);  
 1/1/2020-12/31/2025  
 Effects of tDCS Paired with Cognitive Training on Brain Networks associated with Alcohol Use Disorder in Veterans
+---
+## Features
+- Headers and subheaders
+- **Bold** and *italic* text
+- Lists and numbered lists
+- Code blocks and \`inline code\`
+- Tables and blockquotes
+
+### Try it out!
+Enter your own Markdown text above and click the **Format** button.
+
 
 `;
     }
