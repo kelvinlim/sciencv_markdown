@@ -1,6 +1,14 @@
-# ScienceCV Markdown Formatter
+# sciENcv Markdown Formatter
 
 A modern web application that converts Markdown text to Word-compatible formatted text with a beautiful, intuitive interface.
+
+## Rationale
+The NIH sciENcv application supports Markdown in the personal
+statement section but the formatting to pdf and docx is
+currently broken. The purpose of this application is to be a workaround so that you can use the Markdown to create
+the text which can be then inserted into the Word version
+of your biosketch.
+
 
 ## Features
 
