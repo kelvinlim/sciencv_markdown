@@ -22,7 +22,8 @@ of your biosketch.
 - **Word Compatibility**: Formatted text is optimized for pasting into Microsoft Word documents
 
 ## Supported Markdown Features
-
+- line break - (two spaces at end of line)
+- paragraph break - new line
 - Headers (H1-H6)
 - **Bold** and *italic* text
 - Lists (ordered and unordered)

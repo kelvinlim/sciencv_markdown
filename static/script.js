@@ -268,6 +268,7 @@ A randomized clinical trial of tDCS and cognitive training for the treatment of 
 ---
 ## Features
 - line break - (two spaces at end of line)
+- paragraph break - new line
 - Headers and subheaders
 - **Bold** and *italic* text
 - Lists and numbered lists
